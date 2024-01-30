@@ -1,8 +1,8 @@
 import Count from "./Count.jsx";
-import CountButton from "./CountButton.jsx";
 import ResetButton from "./ResetButton.jsx";
 import CountTitle from "./CountTitle.jsx";
 import { useState } from "react";
+import ButtonContainer from "./ButtonContainer.jsx";
 
 export default function Card() {
   const [count, setCount] = useState(3);
@@ -11,7 +11,7 @@ export default function Card() {
       <CountTitle />
       <Count count={count} size="lg" />
       <ResetButton setCount={setCount}/>
-      <CountButton setCount={setCount}/>
+      <ButtonContainer setCount={setCount}/>
     </div>
   );
 }
