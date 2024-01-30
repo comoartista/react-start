@@ -5,13 +5,14 @@ import { useState } from "react";
 import ButtonContainer from "./ButtonContainer.jsx";
 
 export default function Card() {
-  const [count, setCount] = useState(3);
+  const [count, setCount] = useState(0);
+  const locked = count === 5 ? true : false;
   return (
-    <div className="card">
-      <CountTitle />
+    <div className={`card ${locked && 'card--limit'}`} >
+      <CountTitle locked={locked}/>
       <Count count={count} size="lg" />
       <ResetButton setCount={setCount}/>
-      <ButtonContainer setCount={setCount}/>
+      <ButtonContainer setCount={setCount} locked={locked}/>
     </div>
   );
 }
